@@ -17,9 +17,8 @@ async def main():
     configFile.close()
     url=config["url"]
     topic=config["topic"]
-    screen_reader_output = False
     speaker = None
-    screen_reader_output = config["screen_reader_output"]
+    screen_reader_output = config.get("screen_reader_output", False)
     if screen_reader_output: speaker = AO3.auto.Auto()
     client=ntfpy.NTFYClient(ntfpy.NTFYServer(url), topic)
     await client.subscribe(lambda message: speakMessage(message, screen_reader_output, speaker))
