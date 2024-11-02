@@ -1,5 +1,6 @@
 {
 "screen_reader_output": false,
+"sound": true,
 "url": "https://ntfy.sh",
 "topic": "example"
 }
